@@ -1,23 +1,33 @@
 :root {
   /* COLORS */
-  --baseC: #111111;
-  --helperC: #A52A2A;
-  --herlperCh: #8e2525;
+  --base: #111111;
+  --helper: #A52A2A;
+  --helperH: #8e2525;
+  --text: #bcb5b5;
 }
 
 body {
   color: white;
-  background-color: var(--baseC);
+  background-color: var(--base);
 }
-h1{
+
+h1 {
   font-size: 26px;
 }
-h2{
+
+h2 {
   font-size: 23px;
 }
-h3{
+
+h3 {
   font-size: 20px;
 }
-p,h4,h5,h6,span,i{
+
+p,
+h4,
+h5,
+h6,
+span,
+i {
   font-size: 16px;
 }
