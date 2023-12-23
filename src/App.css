@@ -1,0 +1,23 @@
+:root {
+  /* COLORS */
+  --baseC: #111111;
+  --helperC: #A52A2A;
+  --herlperCh: #8e2525;
+}
+
+body {
+  color: white;
+  background-color: var(--baseC);
+}
+h1{
+  font-size: 26px;
+}
+h2{
+  font-size: 23px;
+}
+h3{
+  font-size: 20px;
+}
+p,h4,h5,h6,span,i{
+  font-size: 16px;
+}
