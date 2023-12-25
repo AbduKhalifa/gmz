@@ -5,7 +5,7 @@ import styles from "./nav.module.css";
 
 export default function Navbar() {
     return (
-        <header className={styles.header + " py-2  px-3 sm:px-5 md:px-6 lg:px-12"}>
+        <header className={styles.header + " py-2  px-3 sm:px-5 md:px-6 lg:px-12 bg-helper"}>
             <div className='flex items-center justify-between'>
                 <div>
                     <img src={require("./../../assets/logo.png")} alt="Logo" width={100} />

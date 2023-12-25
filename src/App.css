@@ -1,7 +1,7 @@
 :root {
   /* COLORS */
   --base: #111111;
-  --helper: #A52A2A;
+  --helper: #ad1b1b;
   --helperH: #8e2525;
   --text: #bcb5b5;
 }
@@ -9,6 +9,7 @@
 body {
   color: white;
   background-color: var(--base);
+  height: 1500px;
 }
 
 h1 {
@@ -30,4 +31,10 @@ h6,
 span,
 i {
   font-size: 16px;
+}
+
+
+::selection {
+  color: var(--base);
+  background: var(--helper);
 }
