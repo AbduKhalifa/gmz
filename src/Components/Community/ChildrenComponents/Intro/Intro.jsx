@@ -14,11 +14,11 @@ import styles from "./intro.module.css";
 
 export default function Intro() {
     return (
-        <div className=' relative'>
+        <div className=' relative xl:mb-40 mb-20 2xl:mb-60'>
             <div className={styles.overlay + ' absolute top-0 left-0 w-full h-full z-10 '}>
                 <div className='flex items-center justify-center h-full flex-col'>
-                    <h1 className='font-semibold text-center sm:font-black text-[46px] sm:text-[80px]'> GMZ COMMUNITY </h1>
-                    <p className='text-[38px] sm:text-[70px]'> <span className='text-[38px] sm:text-[70px] text-helper'>4</span> EVER</p>
+                    <h1 className='font-semibold text-center sm:font-black text-[46px] sm:text-[80px] text-text'> GMZ COMMUNITY </h1>
+                    <p className='text-[38px] text-text sm:text-[70px]'> <span className='text-[38px] sm:text-[70px] text-helper'>4</span> EVER</p>
                 </div>
             </div>
             <Swiper
