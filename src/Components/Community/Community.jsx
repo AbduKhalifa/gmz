@@ -1,7 +1,6 @@
 
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 
 
 // Import Swiper styles
@@ -21,6 +20,7 @@ import { AiTwotoneDislike } from "react-icons/ai";
 import { AiTwotoneLike } from "react-icons/ai";
 import { IoMdEye } from "react-icons/io";
 import { handleLengthString } from './utils.community';
+import Blogs from './ChildrenComponents/Blogs/Blogs';
 
 
 export default function Community() {
@@ -54,7 +54,8 @@ export default function Community() {
     <section>
       <Intro />
       <i className={styles.italicRight + ` block bg-helper w-full h-[56px]`}></i>
-      <section className=' bg-helper px-4 sm:px-8 md:px-[80px] lg:px-[120px] py-12 relative -top-[1px]'>
+      <Blogs />
+      {/* <section className=' bg-helper px-4 sm:px-8 md:px-[80px] lg:px-[120px] py-12 relative -top-[1px]'>
         <Swiper
           loop={true}
           slidesPerView={3}
@@ -126,7 +127,7 @@ export default function Community() {
 
 
         </Swiper>
-      </section>
+      </section> */}
       <i className={styles.italicLeft + ` block bg-helper w-full h-[56px] relative -top-[2px]`}></i>
     </section>
   )
