@@ -101,7 +101,7 @@
 
 .list {
     transition: 200ms;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 320px;
     background-color: #1c1d1df5;
@@ -115,7 +115,7 @@
 
 .hideListBtn {
     transition: scale 200ms;
-    background-color: var(--baseC);
+    background-color: var(--base);
 }
 
 .hideListBtn:hover {

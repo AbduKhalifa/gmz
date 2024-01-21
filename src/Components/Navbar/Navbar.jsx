@@ -48,7 +48,7 @@ export default function Navbar() {
     }, [])
 
     return (
-        <header className={styles.header + " py-2  px-3 sm:px-5 md:px-6 lg:px-12"}>
+        <header className={styles.header + " bg-helper py-2  px-3 sm:px-5 md:px-6 lg:px-12"}>
             <audio ref={clickAudio}>
                 <source src={require("./../../soundEffects/click.mp3")} type="audio/mpeg" />
             </audio>
@@ -97,7 +97,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
-                <div className={styles.TABLET + " overflow-hidden"}>
+                <div className={styles.TABLET + " z-50"}>
                     <div>
                         <button className=' cursor-pointer open-tablet-list'
                             id='OPEN_TABLET_LIST'
