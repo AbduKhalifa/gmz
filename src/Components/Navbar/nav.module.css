@@ -2,3 +2,123 @@
     background-color: #A52A2A;
     font-family: 'Bebas Neue', sans-serif;
 }
+
+@media (max-width:860px) {
+    .PC {
+        display: none;
+    }
+}
+
+@media (min-width:860px) {
+    .TABLET {
+        display: none;
+    }
+}
+
+.header .PC li {
+    transition: opacity 200ms;
+}
+
+.header .PC li:hover {
+    opacity: 0.7;
+}
+
+.header .PC li.active:hover {
+    opacity: 1;
+}
+
+.header .PC li::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 120%;
+    transform: translateX(-10%);
+    height: 1px;
+    background-color: white;
+    opacity: 0;
+}
+
+.header .PC li::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translateX(-50%);
+    background-color: white;
+    transform-origin: center center;
+    rotate: 45deg;
+    opacity: 0;
+}
+
+.header .PC li.active::after,
+.header .PC li.active::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    opacity: 1;
+}
+
+.header .PC li.active::after {
+    bottom: -4px;
+    left: 0;
+    width: 120%;
+    transform: translateX(-10%);
+    height: 1px;
+}
+
+.header .PC li.active::before {
+    bottom: -8px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    rotate: 45deg;
+}
+
+.TABLET li {
+    transition: 200ms;
+}
+
+.TABLET li:not(:last-child) {
+    border-bottom: 1px solid #423333;
+}
+
+.TABLET li:hover {
+    color: var(--helperC);
+    opacity: 0.3;
+}
+
+.TABLET li.active{
+    color: var(--helperC);
+}
+.TABLET li.active:hover{
+    opacity: 1;
+}
+
+
+.list {
+    transition: 200ms;
+    position: absolute;
+    top: 0;
+    width: 320px;
+    background-color: #1c1d1df5;
+}
+
+@media (max-width:460px) {
+    .list {
+        width: 100%;
+    }
+}
+
+.hideListBtn {
+    transition: scale 200ms;
+    background-color: var(--baseC);
+}
+
+.hideListBtn:hover {
+    scale: 1.05;
+}
