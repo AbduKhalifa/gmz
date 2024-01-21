@@ -5,27 +5,3 @@
 .italicLeft {
     clip-path: polygon(0 0, 100% 1%, 100% 0, 0% 100%);
 }
-
-.slide {
-    height: 340px;
-}
-
-
-.cardTitle {
-    font-size: 17px;
-    background-color: red;
-}
-
-.overlay {
-    background-color: #000000bd;
-}
-
-.overlay_ {
-    background: linear-gradient(to top, var(--helperH), #00000000);
-    top: 100%;
-    transition: 300ms;
-}
-
-.slide:hover .overlay_ {
-    top: 0;
-}
