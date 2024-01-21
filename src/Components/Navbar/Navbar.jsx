@@ -11,7 +11,6 @@ import { MdAccountBox } from "react-icons/md";
 import { FaThList } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { handleActivePage } from './utils.navbar';
-// import { handleClickEventOnDocument } from './utils.navbar';
 
 
 export default function Navbar() {
