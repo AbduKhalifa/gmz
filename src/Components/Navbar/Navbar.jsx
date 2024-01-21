@@ -52,6 +52,7 @@ export default function Navbar() {
             <audio ref={clickAudio}>
                 <source src={require("./../../soundEffects/click.mp3")} type="audio/mpeg" />
             </audio>
+
             <div className='flex items-center justify-between'>
                 <div>
                     <img src={require("./../../assets/logo.png")} alt="Logo" width={100} />
