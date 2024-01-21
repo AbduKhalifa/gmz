@@ -16,16 +16,28 @@ function App() {
           element: <Community />
         },
         {
-          path:"/chats",
-          element: <h1> CHAT </h1>
-        },
-        {
-          path:"/games",
-          element: <h1> GAMES </h1>
-        },
-        {
-          path:"/shop",
+          path: "/shop",
           element: <h1> SHOP </h1>
+        },
+        {
+          path: "/groups",
+          element: <h1> Groups </h1>
+        },
+        {
+          path: "/clans",
+          element: <h1> CLANs </h1>
+        },
+        {
+          path: "/account",
+          element: <h1> Accounts  </h1>
+        },
+        {
+          path: "/challengs",
+          element: <h1> challengs  </h1>
+        },
+        {
+          path: "/profile/:id",
+          element: <h1> PROFILE  </h1>
         },
       ]
     },

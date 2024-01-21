@@ -87,12 +87,12 @@
 }
 
 .TABLET li:hover {
-    color: var(--helperC);
+    color: var(--helper);
     opacity: 0.3;
 }
 
 .TABLET li.active{
-    color: var(--helperC);
+    color: var(--helper);
 }
 .TABLET li.active:hover{
     opacity: 1;
