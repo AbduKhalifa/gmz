@@ -11,6 +11,9 @@ import { MdAccountBox } from "react-icons/md";
 import { FaThList } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { handleActivePage } from './utils.navbar';
+import { Link } from 'react-router-dom';
+// import { handleClickEventOnDocument } from './utils.navbar';
+
 
 
 export default function Navbar() {
@@ -58,42 +61,54 @@ export default function Navbar() {
                 </div>
                 <div className={styles.PC}>
                     <ul className='flex items-center gap-4'>
-                        <li
-                            onClick={handleActivePage}
-                            className={' text-[20px] cursor-pointer flex gap-1 relative ' + styles.active}>
-                            <MdHomeFilled size={24} />
-                            <span className=" text-[20px]">Home</span>
-                        </li>
-                        <li
-                            onClick={handleActivePage}
-                            className=' text-[20px] cursor-pointer flex gap-1 relative '>
-                            <FaShopify size={24} />
-                            <span className=" text-[20px]">Shop</span>
-                        </li>
-                        <li
-                            onClick={handleActivePage}
-                            className=' text-[20px] cursor-pointer flex gap-1 relative'>
-                            <PiChatsFill size={24} />
-                            <span className=" text-[20px]">Groups</span>
-                        </li>
-                        <li
-                            onClick={handleActivePage}
-                            className=' text-[20px] cursor-pointer flex gap-1 relative'>
-                            <HiUserGroup size={24} />
-                            <span className=" text-[20px]">Clans</span>
-                        </li>
-                        <li
-                            onClick={handleActivePage}
-                            className=' text-[20px] cursor-pointer flex items-center gap-1 relative'>
-                            <TbSwords size={24} />
-                            <span className=" text-[20px]">Challengs</span>
-                        </li>
-                        <li
-                            onClick={handleActivePage}
-                            className=' text-[20px] cursor-pointer flex items-center gap-1 relative'>
-                            <MdAccountBox size={24} />
-                            <span className=" text-[20px]">Account</span>
-                        </li>
+                        <Link to={"/"}>
+                            <li
+                                onClick={handleActivePage}
+                                className={' text-[20px] cursor-pointer flex gap-1 relative ' + styles.active}>
+                                <MdHomeFilled size={24} />
+                                <span className=" text-[20px]">Home</span>
+                            </li>
+                        </Link>
+                        <Link to={"/shop"}>
+                            <li
+                                onClick={handleActivePage}
+                                className=' text-[20px] cursor-pointer flex gap-1 relative '>
+                                <FaShopify size={24} />
+                                <span className=" text-[20px]">Shop</span>
+                            </li>
+                        </Link>
+                        <Link to={"/groups"}>
+                            <li
+                                onClick={handleActivePage}
+                                className=' text-[20px] cursor-pointer flex gap-1 relative'>
+                                <PiChatsFill size={24} />
+                                <span className=" text-[20px]">Groups</span>
+                            </li>
+                        </Link>
+                        <Link to={"/clans"}>
+                            <li
+                                onClick={handleActivePage}
+                                className=' text-[20px] cursor-pointer flex gap-1 relative'>
+                                <HiUserGroup size={24} />
+                                <span className=" text-[20px]">Clans</span>
+                            </li>
+                        </Link>
+                        <Link to={"/challengs"}>
+                            <li
+                                onClick={handleActivePage}
+                                className=' text-[20px] cursor-pointer flex items-center gap-1 relative'>
+                                <TbSwords size={24} />
+                                <span className=" text-[20px]">Challengs</span>
+                            </li>
+                        </Link>
+                        <Link to={"account"}>
+                            <li
+                                onClick={handleActivePage}
+                                className=' text-[20px] cursor-pointer flex items-center gap-1 relative'>
+                                <MdAccountBox size={24} />
+                                <span className=" text-[20px]">Account</span>
+                            </li>
+                        </Link>
                     </ul>
                 </div>
                 <div className={styles.TABLET + " z-50"}>
