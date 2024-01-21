@@ -8,6 +8,7 @@
 body {
   color: white;
   background-color: var(--baseC);
+  overflow-x: hidden;
 }
 h1{
   font-size: 26px;
