@@ -51,81 +51,85 @@ export default function Blogs() {
     }, [])
 
     return (
-        <section className=' bg-helper px-4 sm:px-8 md:px-[80px] lg:px-[120px] py-12 relative -top-[1px]'>
-            <Swiper
-                loop={true}
-                slidesPerView={3}
-                spaceBetween={0}
-                freeMode={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[FreeMode]}
-                className="mySwiper"
-                breakpoints={breakpoints}
-            >
-                {
-                    blogs ?
-                        blogs.map((e, i) => {
+        <>
+            <i className={styles.italicRight + ` block bg-helper w-full h-[56px]`}></i>
+            <section className=' bg-helper px-4 sm:px-8 md:px-[80px] lg:px-[120px] py-12 relative -top-[1px]'>
+                <Swiper
+                    loop={true}
+                    slidesPerView={3}
+                    spaceBetween={0}
+                    freeMode={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[FreeMode]}
+                    className="mySwiper"
+                    breakpoints={breakpoints}
+                >
+                    {
+                        blogs ?
+                            blogs.map((e, i) => {
 
-                            return <SwiperSlide className={styles.slide} key={i} >
-                                <article className=' p-4  relative h-full flex '>
-                                    <div className={" absolute top-0 left-0 -z-10 w-full h-full"}>
-                                        <img src={require("./../../../../assets/test.jpg")} alt="" className='w-full h-full object-cover object-center' />
-                                    </div>
-                                    <div className={styles.overlay + " absolute top-0 left-0 -z-10 w-full h-full"}>
-
-                                    </div>
-                                    <div className={styles.overlay_ + " absolute top-0 left-0  -z-10 w-full h-full"}>
-
-                                    </div>
-                                    <section className='flex flex-col justify-between'>
-                                        <div>
-                                            <div className='flex'>
-                                                <h3 className={styles.cardTitle + " font-semibold p-1 px-2"}>
-                                                    {e.type}
-                                                </h3>
-                                            </div>
-                                            <div>
-                                                <p className=' text-text text-[15px] py-2'>
-                                                    {e.content}
-                                                </p>
-                                            </div>
+                                return <SwiperSlide className={styles.slide} key={i} >
+                                    <article className=' p-4  relative h-full flex '>
+                                        <div className={" absolute top-0 left-0 -z-10 w-full h-full"}>
+                                            <img src={require("./../../../../assets/test.jpg")} alt="" className='w-full h-full object-cover object-center' />
                                         </div>
-                                        <div>
-                                            <div className='flex gap-2'>
-                                                <div className='flex gap-1'>
-                                                    <AiTwotoneDislike className=' text-text' />
-                                                    <span className='text-xs text-text'>{e.like}</span>
+                                        <div className={styles.overlay + " absolute top-0 left-0 -z-10 w-full h-full"}>
+
+                                        </div>
+                                        <div className={styles.overlay_ + " absolute top-0 left-0  -z-10 w-full h-full"}>
+
+                                        </div>
+                                        <section className='flex flex-col justify-between'>
+                                            <div>
+                                                <div className='flex'>
+                                                    <h3 className={styles.cardTitle + " font-semibold p-1 px-2"}>
+                                                        {e.type}
+                                                    </h3>
                                                 </div>
-                                                <div className='flex gap-1'>
-                                                    <AiTwotoneLike className=' text-text' />
-                                                    <span className='text-xs text-text'>{e.disLike}</span>
-                                                </div>
-                                                <div className='flex gap-1'>
-                                                    <IoMdEye className='text-text' />
-                                                    <span className='text-xs text-text'>{e.views}</span>
+                                                <div>
+                                                    <p className=' text-text text-[15px] py-2'>
+                                                        {e.content}
+                                                    </p>
                                                 </div>
                                             </div>
                                             <div>
-                                                <span
-                                                    className=' underline text-text text-xs mt-2 block cursor-pointer hover:text-white'
-                                                    onClick={() => {
-                                                        console.log("SHOW");
-                                                    }}
-                                                >
-                                                    Show
-                                                </span>
+                                                <div className='flex gap-2'>
+                                                    <div className='flex gap-1'>
+                                                        <AiTwotoneDislike className=' text-text' />
+                                                        <span className='text-xs text-text'>{e.like}</span>
+                                                    </div>
+                                                    <div className='flex gap-1'>
+                                                        <AiTwotoneLike className=' text-text' />
+                                                        <span className='text-xs text-text'>{e.disLike}</span>
+                                                    </div>
+                                                    <div className='flex gap-1'>
+                                                        <IoMdEye className='text-text' />
+                                                        <span className='text-xs text-text'>{e.views}</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span
+                                                        className=' underline text-text text-xs mt-2 block cursor-pointer hover:text-white'
+                                                        onClick={() => {
+                                                            console.log("SHOW");
+                                                        }}
+                                                    >
+                                                        Show
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </section>
-                                </article>
-                            </SwiperSlide>
-                        })
-                        :
-                        undefined
-                }
-            </Swiper>
-        </section>
+                                        </section>
+                                    </article>
+                                </SwiperSlide>
+                            })
+                            :
+                            undefined
+                    }
+                </Swiper>
+            </section>
+            <i className={styles.italicLeft + ` block bg-helper w-full h-[56px] relative -top-[2px]`}></i>
+        </>
     )
 }

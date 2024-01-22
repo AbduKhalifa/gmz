@@ -1,3 +1,10 @@
+.italicRight {
+    clip-path: polygon(0 100%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.italicLeft {
+    clip-path: polygon(0 0, 100% 1%, 100% 0, 0% 100%);
+}
 
 .slide {
     height: 340px;
