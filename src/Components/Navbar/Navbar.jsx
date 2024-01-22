@@ -139,42 +139,54 @@ export default function Navbar() {
                             </button>
                         </div>
                         <ul className='p-2'>
-                            <li className={styles.active + ' flex items-center gap-1 py-1 cursor-pointer'}
-                                onClick={handleActivePage}
-                            >
-                                <MdHomeFilled size={26} />
-                                <span className='text-[20px] line-clamp-1'>Home</span>
-                            </li>
-                            <li
-                                onClick={handleActivePage}
-                                className='flex items-center gap-1  py-1 cursor-pointer'>
-                                <FaShopify size={26} />
-                                <span className='text-[20px] line-clamp-1'>Shop</span>
-                            </li>
-                            <li
-                                onClick={handleActivePage}
-                                className='flex items-center gap-1 py-1 cursor-pointer'>
-                                <PiChatsFill size={26} />
-                                <span className='text-[20px] line-clamp-1'>Groups</span>
-                            </li>
-                            <li
-                                onClick={handleActivePage}
-                                className='flex items-center gap-1 py-1 cursor-pointer'>
-                                <HiUserGroup size={26} />
-                                <span className='text-[20px] line-clamp-1'>Clans</span>
-                            </li>
-                            <li
-                                onClick={handleActivePage}
-                                className='flex items-center gap-1 py-1 cursor-pointer'>
-                                <TbSwords size={26} />
-                                <span className='text-[20px] line-clamp-1'>Challengs</span>
-                            </li>
-                            <li
-                                onClick={handleActivePage}
-                                className='flex items-center gap-1 pt-1 cursor-pointer'>
-                                <MdAccountBox size={26} />
-                                <span className='text-[20px] line-clamp-1'>Account</span>
-                            </li>
+                            <Link to={"/"}>
+                                <li className={styles.active + ' flex items-center gap-1 py-1 cursor-pointer'}
+                                    onClick={handleActivePage}
+                                >
+                                    <MdHomeFilled size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Home</span>
+                                </li>
+                            </Link>
+                            <Link to={"/shop"}>
+                                <li
+                                    onClick={handleActivePage}
+                                    className='flex items-center gap-1  py-1 cursor-pointer'>
+                                    <FaShopify size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Shop</span>
+                                </li>[]
+                            </Link>
+                            <Link to={"/groups"}>
+                                <li
+                                    onClick={handleActivePage}
+                                    className='flex items-center gap-1 py-1 cursor-pointer'>
+                                    <PiChatsFill size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Groups</span>
+                                </li>
+                            </Link>
+                            <Link to={"/clans"}>
+                                <li
+                                    onClick={handleActivePage}
+                                    className='flex items-center gap-1 py-1 cursor-pointer'>
+                                    <HiUserGroup size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Clans</span>
+                                </li>
+                            </Link>
+                            <Link to={"/challengs"}>
+                                <li
+                                    onClick={handleActivePage}
+                                    className='flex items-center gap-1 py-1 cursor-pointer'>
+                                    <TbSwords size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Challengs</span>
+                                </li>
+                            </Link>
+                            <Link to={"/account"}>
+                                <li
+                                    onClick={handleActivePage}
+                                    className='flex items-center gap-1 pt-1 cursor-pointer'>
+                                    <MdAccountBox size={26} />
+                                    <span className='text-[20px] line-clamp-1'>Account</span>
+                                </li>
+                            </Link>
                         </ul>
                     </div>
                 </div>
