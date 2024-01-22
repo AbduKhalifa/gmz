@@ -23,7 +23,7 @@ export default function Navbar() {
 
     const clickAudio = useRef(null)
 
-    const {pathname} = useLocation();
+    const { pathname } = useLocation();
 
 
     function runClickAudio() {
@@ -32,12 +32,24 @@ export default function Navbar() {
 
     function putCurrentPage() {
         const elements = Array.from(document.querySelectorAll(`.${styles.header} ul li`))
+        function put(cls) {
+            document.querySelectorAll(cls).forEach(e => e.classList.add(styles.active))
+        }
         elements.forEach((e) => {
             e.classList.remove(styles.active)
         })
-        document.querySelectorAll("." + currentPage).forEach(e => {
-            e.classList.add(styles.active)
-        });
+        if (pathname.substring(1) + "__" === "shop__")
+            put(".shop__");
+        else if (pathname.substring(1) + "__" === "groups__")
+            put(".groups__");
+        else if (pathname.substring(1) + "__" === "clans__")
+            put(".clans__");
+        else if (pathname.substring(1) + "__" === "challengs__")
+            put(".challengs__");
+        else if (pathname.substring(1) + "__" === "account__")
+            put(".account__");
+        else
+            put(".home__");
     }
 
     /**
