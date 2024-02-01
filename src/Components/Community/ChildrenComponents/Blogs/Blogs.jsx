@@ -40,15 +40,15 @@ export default function Blogs() {
 
     const [blogs, setBlogs] = useState(null);
 
-    async function getBlogs() {
-        const { data } = await axios.get("http://localhost:3001/");
-        setBlogs(data)
-        console.log(data);
-    }
+    // async function getBlogs() {
+    //     const { data } = await axios.get("http://localhost:3001/");
+    //     setBlogs(data)
+    //     console.log(data);
+    // }
 
-    useEffect(() => {
-        getBlogs()
-    }, [])
+    // useEffect(() => {
+    //     getBlogs()
+    // }, [])
 
     return (
         <>
@@ -66,7 +66,7 @@ export default function Blogs() {
                     className="mySwiper"
                     breakpoints={breakpoints}
                 >
-                    {
+                    {/* {
                         blogs ?
                             blogs.map((e, i) => {
 
@@ -126,7 +126,7 @@ export default function Blogs() {
                             })
                             :
                             undefined
-                    }
+                    } */}
                 </Swiper>
             </section>
             <i className={styles.italicLeft + ` block bg-helper w-full h-[56px] relative -top-[2px]`}></i>

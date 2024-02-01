@@ -1,0 +1,21 @@
+.auth {
+    height: 100vh;
+}
+
+.overlay {
+    background-color: #000000a1;
+}
+
+.panel {
+    transform: translateX(-50%);
+    transition: 600ms;
+}
+
+.loginBtn {
+    transition: 200ms;
+}
+
+.loginBtn:hover {
+    background-color: white;
+    color: var(--base);
+}
