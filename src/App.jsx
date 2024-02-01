@@ -2,6 +2,7 @@ import { RouterProvider, createHashRouter } from 'react-router-dom';
 import './App.css';
 import Layout from './Components/Layout/Layout';
 import Community from './Components/Community/Community';
+import Authentication from './Components/Authentication/Authentication';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
         },
         {
           path: "/account",
-          element: <h1> Accounts  </h1>
+          element: <Authentication />
         },
         {
           path: "/challengs",

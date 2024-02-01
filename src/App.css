@@ -10,8 +10,6 @@ body {
   color: white;
   background-color: var(--base);
   overflow-x: hidden;
-  height: 1500px;
-
 }
 
 h1 {
