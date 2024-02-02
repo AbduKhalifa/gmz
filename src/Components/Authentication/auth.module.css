@@ -19,3 +19,7 @@
     background-color: white;
     color: var(--base);
 }
+
+.warnElement{
+    transition: opacity 250ms;
+}
