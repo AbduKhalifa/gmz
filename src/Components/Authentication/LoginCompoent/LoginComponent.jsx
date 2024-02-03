@@ -1,14 +1,65 @@
 
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from "./../auth.module.css";
 import { FaUser } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoWarningSharp } from "react-icons/io5";
+import { domain } from "./../../../vars/var"
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userLogged } from '../../../redux/uSlice';
+
+
 
 export default function LoginComponent({ getRegisterPanel }) {
 
+    const dispatch = useDispatch()
+    const navigation = useNavigate();
+    const warnElement = useRef(null);
+
+    const [warninigColor, setWarningColor] = useState("#fff000")
+    const [loginAccount, setLoginAccount] = useState({
+        email: "",
+        password: ""
+    })
+
     const [warning, setWarning] = useState("")
+
+    function gotoHomePage() {
+        navigation("/");
+    }
+
+    function putTokenOnStorage(myToken) {
+        window.localStorage.setItem("tkn", myToken);
+    }
+    function deleteTokenFromLocalStorage() {
+        window.localStorage.removeItem("tkn");
+    }
+
+    function showWarn(warnMessage) {
+        warnElement.current.style.opacity = "1";
+        setTimeout(() => warnElement.current.style.opacity = "0", 4000)
+        setWarning(warnMessage)
+    }
+
+    async function login() {
+        const route = "/auth/login";
+        try {
+            const { data } = await axios.post(domain + route, loginAccount);
+            if (data.status) {
+                putTokenOnStorage(data.token);
+                dispatch(userLogged(data));
+                gotoHomePage();
+            } else {
+                showWarn(data.msg);
+            }
+        } catch (error) {
+            showWarn(error.response.data.msg)
+        }
+    }
+
 
     return (
         <div className={styles.loginPanel + '  mx-auto w-[90%] sm:w-[70%] md:w-[50%] border-helper border-4 '}>
@@ -18,28 +69,49 @@ export default function LoginComponent({ getRegisterPanel }) {
             <div className=' bg-base p-4'>
                 <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
                     <FaUser color='#000' size={24} />
-                    <input type="email" className='flex-1 text-black border-0  outline-none ' placeholder='Email' />
+                    <input
+                        type="email"
+                        className='flex-1 text-black border-0  outline-none '
+                        placeholder='Email'
+                        value={loginAccount.email}
+                        onChange={({ target }) => {
+                            setLoginAccount({ ...loginAccount, email: target.value })
+                        }}
+                    />
                 </div>
                 <div className=' flex items-center bg-white p-2 gap-2 '>
                     <RiLockPasswordFill color='#000' size={24} />
-                    <input type="password" className='flex-1 text-black border-0  outline-none ' placeholder='password' />
+                    <input
+                        type="password"
+                        className='flex-1 text-black border-0  outline-none '
+                        placeholder='password'
+                        value={loginAccount.password}
+                        onChange={({ target }) => {
+                            setLoginAccount({ ...loginAccount, password: target.value })
+                        }}
+                    />
                 </div>
             </div>
-            <div className='bg-base'>
-                <div className='flex justify-center gap-2 items-center h-[14px]'>
-                    {
-                        warning ?
-                            <IoWarningSharp color='#FFFF00	' />
-                            :
-                            null
-                    }
-                    <span className=' text-[#FFFF00] text-sm'>
+            <div className='bg-base '>
+                <div
+                    className={styles.warnElement + ' px-4 py-1 flex justify-center gap-2 items-center h-[14px]'}
+                    ref={warnElement}
+                    style={{ opacity: "0" }}
+                >
+                    <IoWarningSharp color={warninigColor} />
+                    <span className={`text-sm`} style={{ color: warninigColor }}>
                         {warning}
                     </span>
                 </div>
             </div>
             <div className='pt-4 bg-base flex items-center justify-center'>
-                <button className={'bg-helper px-8 py-2 rounded-full ' + styles.loginBtn}>LOGIN</button>
+                <p className='text-[14px] hover:underline hover:text-helper cursor-pointer'>Forget your password</p>
+            </div>
+            <div className='pt-4 bg-base flex items-center justify-center'>
+                <button
+                    className={'bg-helper px-8 py-2 rounded-full ' + styles.loginBtn}
+                    onClick={login}
+                >LOGIN</button>
             </div>
             <div className='bg-base pb-4 flex items-center justify-center'>
                 <button className='text-xs hover:underline' onClick={getRegisterPanel}>Sign Up</button>
