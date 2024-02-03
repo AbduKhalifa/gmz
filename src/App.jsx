@@ -3,11 +3,13 @@ import './App.css';
 import Layout from './Components/Layout/Layout';
 import Community from './Components/Community/Community';
 import Authentication from './Components/Authentication/Authentication';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { useSelector } from 'react-redux';
+
+import ProtectedAuthenticated from './Components/ProtectedRoutes/ProtectedAuthenticated';
 
 function App() {
 
+  const { isLogin } = useSelector(rds => rds.uReducer);
 
   const router = createHashRouter([
     {
@@ -32,7 +34,7 @@ function App() {
         },
         {
           path: "/account",
-          element: <Authentication />
+          element: <ProtectedAuthenticated where={"/"} check={isLogin}>  <Authentication /> </ProtectedAuthenticated>
         },
         {
           path: "/challengs",
@@ -40,7 +42,7 @@ function App() {
         },
         {
           path: "/profile/:id",
-          element: <h1> PROFILE  </h1>
+          element: <ProtectedAuthenticated where={"/account"} check={!isLogin}> <h1> PROFILE </h1></ProtectedAuthenticated>
         },
       ]
     },
@@ -51,9 +53,7 @@ function App() {
   ])
 
   return (
-    <Provider store={store}>
-      <RouterProvider router={router}></RouterProvider>
-    </Provider>
+    <RouterProvider router={router}></RouterProvider>
   );
 }
 
