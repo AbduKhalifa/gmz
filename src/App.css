@@ -1,14 +1,30 @@
 :root {
   /* COLORS */
-  --base: #111111;
-  --helper: #ad1b1b;
-  --helperH: #8e2525;
-  --text: #bcb5b5;
+  --base: #45F882;
+  --helper: #0B0E13;
+  --helperH: #121B24;
+  --text: #ABAEBA;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.f-1 {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+
+}
+
+.f-2 {
+  font-family: 'Poppins', sans-serif;
+
 }
 
 body {
+  margin: auto;
+  max-width: 1800px;
   color: white;
-  background-color: var(--base);
+  background-color: var(--helper);
   overflow-x: hidden;
 }
 
@@ -41,15 +57,16 @@ i {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(141, 1, 1);
+  background: var(--helperH)
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(202, 36, 36);
+  border-radius: 10px;
+  background: var(--base);
 }
