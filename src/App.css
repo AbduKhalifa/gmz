@@ -38,3 +38,18 @@ i {
   color: var(--base);
   background: var(--helper);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(141, 1, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(202, 36, 36);
+}

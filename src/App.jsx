@@ -3,6 +3,8 @@ import './App.css';
 import Layout from './Components/Layout/Layout';
 import Community from './Components/Community/Community';
 import Authentication from './Components/Authentication/Authentication';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 function App() {
 
@@ -49,9 +51,9 @@ function App() {
   ])
 
   return (
-    <>
+    <Provider store={store}>
       <RouterProvider router={router}></RouterProvider>
-    </>
+    </Provider>
   );
 }
 
