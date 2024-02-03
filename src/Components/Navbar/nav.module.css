@@ -1,5 +1,5 @@
-.header {
-    font-family: 'Bebas Neue', sans-serif;
+.header *{
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 @media (max-width:860px) {
@@ -87,12 +87,12 @@
 }
 
 .TABLET li:hover {
-    color: var(--helper);
+    color: var(--base);
     opacity: 0.3;
 }
 
 .TABLET li.active{
-    color: var(--helper);
+    color: var(--base);
 }
 .TABLET li.active:hover{
     opacity: 1;
@@ -115,7 +115,7 @@
 
 .hideListBtn {
     transition: scale 200ms;
-    background-color: var(--base);
+    background-color: var(--helper);
 }
 
 .hideListBtn:hover {

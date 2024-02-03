@@ -6,6 +6,7 @@ import Authentication from './Components/Authentication/Authentication';
 import { useSelector } from 'react-redux';
 
 import ProtectedAuthenticated from './Components/ProtectedRoutes/ProtectedAuthenticated';
+import Profile from './Components/Profile/Profile';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
         },
         {
           path: "/profile/:id",
-          element: <ProtectedAuthenticated where={"/account"} check={!isLogin}> <h1> PROFILE </h1></ProtectedAuthenticated>
+          element: <ProtectedAuthenticated where={"/account"} check={!isLogin}> <Profile /> </ProtectedAuthenticated>
         },
       ]
     },
