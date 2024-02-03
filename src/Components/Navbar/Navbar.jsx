@@ -11,11 +11,14 @@ import { MdAccountBox } from "react-icons/md";
 import { FaThList } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 
 export default function Navbar() {
+
+    const userData = useSelector(reducers => reducers.uReducer);
 
     const [currentPage, setCurrentPage] = useState("d");
     const [showTabletNav, setShowTabletNav] = useState(false);
@@ -141,16 +144,32 @@ export default function Navbar() {
                                 <span className=" text-[20px]">Challengs</span>
                             </li>
                         </Link>
-                        <Link to={"account"}>
-                            <li
-                                onClick={() => {
-                                    setCurrentPage("account__")
-                                }}
-                                className=' text-[20px] cursor-pointer flex items-center gap-1 relative account__'>
-                                <MdAccountBox size={24} />
-                                <span className=" text-[20px]">Account</span>
-                            </li>
-                        </Link>
+                        {
+                            userData.isLogin ?
+                                <Link  to={`/profile/${userData.id}`}>
+                                    <li className='flex items-center gap-2 hover:opacity-[1]'>
+                                        <div className='rounded-full overflow-hidden border-[3px] border-white'>
+                                            <img
+                                                className=' aspect-square object-center object-cover'
+                                                src={require("./../../assets/ac3.jpg")}
+                                                alt={"avatar's " + userData.nickname}
+                                                width={34} />
+                                        </div>
+                                        <span className=" text-[20px]">{userData.nickname}</span>
+                                    </li>
+                                </Link>
+                                :
+                                <Link to={"account"}>
+                                    <li
+                                        onClick={() => {
+                                            setCurrentPage("account__")
+                                        }}
+                                        className=' text-[20px] cursor-pointer flex items-center gap-1 relative account__'>
+                                        <MdAccountBox size={24} />
+                                        <span className=" text-[20px]">Account</span>
+                                    </li>
+                                </Link>
+                        }
                     </ul>
                 </div>
                 <div className={styles.TABLET + " z-50"}>
@@ -215,13 +234,30 @@ export default function Navbar() {
                                     <span className='text-[20px] line-clamp-1'>Challengs</span>
                                 </li>
                             </Link>
-                            <Link to={"/account"}>
-                                <li
-                                    className='flex items-center gap-1 pt-1 cursor-pointer account__'>
-                                    <MdAccountBox size={26} />
-                                    <span className='text-[20px] line-clamp-1'>Account</span>
-                                </li>
-                            </Link>
+                            {
+                                userData.isLogin ?
+                                    <Link to={`/profile/${userData.id}`}>
+                                        <li className='flex items-center gap-2 hover:opacity-[1]'>
+                                            <div className='rounded-full overflow-hidden border-[3px] border-white'>
+                                                <img
+                                                    className=' aspect-square object-center object-cover'
+                                                    src={require("./../../assets/ac3.jpg")}
+                                                    alt={"avatar's " + userData.nickname}
+                                                    width={28} />
+                                            </div>
+                                            <span className=" text-[20px]">{userData.nickname}</span>
+                                        </li>
+                                    </Link>
+                                    :
+                                    <Link to={"/account"}>
+                                        <li
+                                            className='flex items-center gap-1 pt-1 cursor-pointer account__'>
+                                            <MdAccountBox size={26} />
+                                            <span className='text-[20px] line-clamp-1'>Account</span>
+                                        </li>
+                                    </Link>
+                            }
+
                         </ul>
                     </div>
                 </div>
