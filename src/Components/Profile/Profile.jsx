@@ -7,6 +7,7 @@ import styles from "./profile.module.css";
 import { IoDiamondOutline } from "react-icons/io5";
 import { GiCrownedSkull } from "react-icons/gi";
 import { LiaGamepadSolid } from "react-icons/lia";
+import CallPlayer from './CallPlayer/CallPlayer';
 
 
 export default function Profile() {
@@ -15,8 +16,9 @@ export default function Profile() {
 
     return (
         <section>
+            <CallPlayer />
             <section className=' p-6 lg:p-12 flex gap-8 sm:flex-row flex-col'>
-                <div className=' bg-[#1C242F] rounded-xl py-6 w-[100%] sm:w-[325px] m-auto max-w-[325px] relative overflow-hidden'>
+                <div className=' bg-[#1C242F] rounded-xl py-6 w-[100%] m-auto sm:w-[325px] max-w-[325px] relative overflow-hidden sm:m-0 h-min'>
                     <div className={styles.card + ' px-12 relative'}>
                         <span className={styles.rightLine}></span>
                         <span className={styles.leftLine}></span>
@@ -46,28 +48,104 @@ export default function Profile() {
                             <h4 className='font-extrabold text-base mb-2' style={{ fontSize: "22px" }}>
                                 Digital Holdings
                             </h4>
-                            <div className='md:px-3 grid grid-cols-2 gap-12 mb-2'>
-                                <div className='flex flex-col gap-2 col-span-2 md:col-span-1'>
+                            <div className='md:px-3 grid  gap-12 mb-2'>
+                                <div className='flex gap-4 md:gap-12 flex-wrap justify-between md:justify-start'>
                                     <div>
-                                        <p className='text-[14px]'>Experiences</p>
-                                        <span className=' text-base f-1'> 5179.54 exp</span>
+                                        <p className='text-[14px] f-1 text-base flex items-center gap-2'>
+                                            Experinences
+                                            <img
+                                                width={25}
+                                                src={require("./../../assets/exp.png")}
+                                                alt="Crystal Shards"
+                                            />
+                                        </p>
+                                        <span className='  f-1 text-text'> 5179.54 exp</span>
                                     </div>
                                     <div>
-                                        <p className='text-[12px] '>Crystal Shards</p>
-                                        <span className=' text-base f-1'> 794</span>
+                                        <p className='text-[14px] f-1 text-base flex items-center gap-2'>
+                                            Crystal Shards
+                                            <img
+                                                width={20}
+                                                src={require("./../../assets/CS.png")}
+                                                alt="Crystal Shards"
+                                            />
+                                        </p>
+                                        <span className='  f-1 text-text'> 794</span>
                                     </div>
-                                </div>
-                                <div className='p col-span-2 md:col-span-1'>
-                                    <p className={styles.lvl + " text-base font-black "}>17 <span className='text-sm'>Level</span> </p>
+                                    <div>
+                                        <p className='text-[14px] f-1 text-base flex items-center gap-2'>
+                                            Level
+                                            <img
+                                                width={20}
+                                                src={require("./../../assets/lvl.png")}
+                                                alt="Crystal Shards"
+                                            />
+                                        </p>
+                                        <span className='  f-1 text-text'> 18</span>
+                                    </div>
+                                    <div>
+                                        <p className='text-[14px] f-1 text-base flex items-center gap-2'>
+                                            Rank
+                                            <img
+                                                width={20}
+                                                src={require("./../../assets/badage.png")}
+                                                alt="Crystal Shards"
+                                            />
+                                        </p>
+                                        <span className='  f-1 text-text'> SILVER </span>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <h4 className='font-extrabold text-base mb-2 text-[24px]' >
-                                    Rank
-                                </h4>
-                                <div className='font-bold text-[20px]'>
-                                    silver III
+
+                        </div>
+                    </section>
+                    <section className=''>
+                        <div className=''>
+                            <h4 className='font-extrabold text-base mb-2 ' style={{ fontSize: "22px" }}>
+                                Gaming Skills
+                            </h4>
+                            <div className='grid grid-cols-2 gap-4'>
+                                <div className=' lg:col-span-1 col-span-2 flex flex-col gap-6'>
+                                    <div>
+                                        <p className='f-1'>Survival</p>
+                                        <div className='bg-helperH'>
+                                            <span className={styles.prograss + " "} style={{ width: "60%" }}>
+
+                                                <i className=' text-[10px]'>45</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className=' f-1'>Tactics</p>
+                                        <div className='bg-helperH'>
+                                            <span className={styles.prograss + " "} style={{ width: "20%" }}>
+
+                                                <i className=' text-[10px]'>45</i>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div className=' lg:col-span-1 col-span-2 flex flex-col gap-6'>
+                                    <div>
+                                        <p className='f-1'>Shooter</p>
+                                        <div className='bg-helperH'>
+                                            <span className={styles.prograss + " "} style={{ width: "14%" }}>
+
+                                                <i className=' text-[10px]'>45</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p className=' f-1'>Zombie</p>
+                                        <div className='bg-helperH'>
+                                            <span className={styles.prograss + " "} style={{ width: "90%" }}>
+
+                                                <i className=' text-[10px]'>45</i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </section>

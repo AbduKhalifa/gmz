@@ -1,0 +1,11 @@
+.call_player {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.call_player>div, 
+.call_player>div button {
+
+    transition: 250ms;
+}

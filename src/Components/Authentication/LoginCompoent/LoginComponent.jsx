@@ -63,10 +63,10 @@ export default function LoginComponent({ getRegisterPanel }) {
 
     return (
         <div className={styles.loginPanel + '  mx-auto w-[90%] sm:w-[70%] md:w-[50%] border-helper border-4 '}>
-            <div className=" bg-helper">
+            <div className=" bg-helperH">
                 <h2 className='text-center p-2 font-semibold'> Login</h2>
             </div>
-            <div className=' bg-base p-4'>
+            <div className=' bg-helperH p-4'>
                 <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
                     <FaUser color='#000' size={24} />
                     <input
@@ -92,7 +92,7 @@ export default function LoginComponent({ getRegisterPanel }) {
                     />
                 </div>
             </div>
-            <div className='bg-base '>
+            <div className='bg-helperH '>
                 <div
                     className={styles.warnElement + ' px-4 py-1 flex justify-center gap-2 items-center h-[14px]'}
                     ref={warnElement}
@@ -104,16 +104,16 @@ export default function LoginComponent({ getRegisterPanel }) {
                     </span>
                 </div>
             </div>
-            <div className='pt-4 bg-base flex items-center justify-center'>
-                <p className='text-[14px] hover:underline hover:text-helper cursor-pointer'>Forget your password</p>
+            <div className='pt-4 bg-helperH flex items-center justify-center'>
+                <p className='hover:underline hover:text-base cursor-pointer'>Forget your password</p>
             </div>
-            <div className='pt-4 bg-base flex items-center justify-center'>
+            <div className='pt-4 bg-helperH flex items-center justify-center'>
                 <button
-                    className={'bg-helper px-8 py-2 rounded-full ' + styles.loginBtn}
+                    className={'bg-base px-8 py-2 rounded-full ' + styles.loginBtn}
                     onClick={login}
                 >LOGIN</button>
             </div>
-            <div className='bg-base pb-4 flex items-center justify-center'>
+            <div className='bg-helperH pb-4 flex items-center justify-center'>
                 <button className='text-xs hover:underline' onClick={getRegisterPanel}>Sign Up</button>
             </div>
         </div>
