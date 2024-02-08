@@ -10,6 +10,18 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.mc {
+  color: var(--base);
+}
+
+.sc {
+  color: var(--helper);
+}
+
+.tc {
+  color: var(--helperH);
+}
+
 .f-1 {
   font-family: 'Barlow Semi Condensed', sans-serif;
 
