@@ -1,0 +1,7 @@
+.articles>div:nth-child(odd) {
+    direction: rtl;
+}
+
+.articles>div:nth-child(odd) p {
+    direction: ltr;
+}
