@@ -1,3 +1,7 @@
-.overlay{
+.overlay {
     background-color: #111111c7;
+}
+
+.overlay>div {
+    background: linear-gradient(to top, var(--helper), #00000000);
 }
