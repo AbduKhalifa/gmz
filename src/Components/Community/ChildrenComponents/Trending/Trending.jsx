@@ -8,8 +8,8 @@ export default function Trending() {
         <section className='px-6 md:px-12 lg:px-16 xl:px-24'>
             <h2 className='f-1 text-[44px] font-black mc'>Trending</h2>
             <section className='py-12'>
-                <div className={styles.articles}>
-                    <div>
+                <div className={styles.articles + " "}>
+                    <div className=' mb-12'>
                         <article className=' grid grid-cols-1 sm:grid-cols-2 gap-12 place-items-center'>
                             <p className=' text-text text-xl font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed incidunt,
                                 enim praesentium ipsum cupiditate debitis minima magnam fugiat, nisi error commodi quidem quae odit autem provident
@@ -20,7 +20,7 @@ export default function Trending() {
                             </div>
                         </article>
                     </div>
-                    <div>
+                    <div className='mb-12'> 
                         <article className=' grid grid-cols-1 sm:grid-cols-2 gap-12 place-items-center '>
                             <p className=' text-text text-xl font-bold'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed incidunt,
                                 enim praesentium ipsum cupiditate debitis minima magnam fugiat, nisi error commodi quidem quae odit autem provident

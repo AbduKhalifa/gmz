@@ -5,3 +5,6 @@
 .overlay>div {
     background: linear-gradient(to top, var(--helper), #00000000);
 }
+.gifPlace{
+    transition: opacity 450ms;
+}
