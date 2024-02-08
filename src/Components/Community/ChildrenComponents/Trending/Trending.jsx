@@ -16,7 +16,7 @@ export default function Trending() {
                                 voluptatem repudiandae tenetur consectetur eum soluta molestias! Maiores soluta rerum beatae nostrum laborum odio?
                             </p>
                             <div>
-                                <img src={require("./../../assets/tr1.png")} alt="" />
+                                <img src={require("./../../../../assets/tr1.png")} alt="" />
                             </div>
                         </article>
                     </div>
@@ -27,7 +27,7 @@ export default function Trending() {
                                 voluptatem repudiandae tenetur consectetur eum soluta molestias! Maiores soluta rerum beatae nostrum laborum odio?
                             </p>
                             <div>
-                                <img src={require("./../../assets/tr1.png")} alt="" />
+                                <img src={require("./../../../../assets/tr1.png")} alt="" />
                             </div>
                         </article>
                     </div>
