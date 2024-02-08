@@ -22,10 +22,10 @@ export default function Profile() {
                     <div className={styles.card + ' px-12 relative'}>
                         <span className={styles.rightLine}></span>
                         <span className={styles.leftLine}></span>
-                        <div className=' overflow-hidden rounded-full z-10 relative  border-[4px] border-white'>
+                        <div className=' overflow-hidden rounded-full z-10 relative  border-[4px] border-base'>
 
                             <img
-                                src={require("./../../assets/ac6.jpg")}
+                                src={require("./../../assets/m4.png")}
                                 alt=" avatar "
                                 className=' aspect-square '
                             />
