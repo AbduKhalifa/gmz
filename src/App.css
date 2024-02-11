@@ -32,6 +32,10 @@
 
 }
 
+.f-3 {
+  font-family: 'Single Day', cursive;
+}
+
 body {
   margin: auto;
   max-width: 1800px;
@@ -82,3 +86,4 @@ i {
   border-radius: 10px;
   background: var(--base);
 }
+

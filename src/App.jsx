@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 
 import ProtectedAuthenticated from './Components/ProtectedRoutes/ProtectedAuthenticated';
 import Profile from './Components/Profile/Profile';
+import Shop from './Components/Shop/Shop';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         },
         {
           path: "/shop",
-          element: <h1> SHOP </h1>
+          element: <Shop />
         },
         {
           path: "/groups",
