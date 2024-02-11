@@ -28,12 +28,6 @@ export default function Authentication() {
 
     return (
         <section className={styles.auth + " relative h-screen overflow-hidden"}>
-            <img className='w-full object-cover object-center h-[10vh]' src={require("./../../assets/test.jpg")} alt="safddadsf" />
-            <img className='w-full object-cover object-center h-[10vh]' src={require("./../../assets/ac2.jpg")} alt="safddadsf" />
-            <img className='w-full object-cover object-bottom h-[20vh]' src={require("./../../assets/ac3.jpg")} alt="safddadsf" />
-            <img className='w-full object-cover object-center h-[10vh]' src={require("./../../assets/ac4.jpg")} alt="safddadsf" />
-            <img className='w-full object-cover object-center h-[30vh]' src={require("./../../assets/ac5.jpg")} alt="safddadsf" />
-            <img className='w-full object-cover object-bottom h-[20vh]' src={require("./../../assets/ac6.jpg")} alt="safddadsf" />
             <div className=" absolute top-0 left-0 w-full h-full z-10">
                 <div className={styles.overlay + " absolute top-0 left-0 w-full h-full -z-10 overflow-hidden"}>  </div>
                 <div className=' py-20 z-10 relative h-full'>
