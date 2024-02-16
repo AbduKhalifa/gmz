@@ -11,7 +11,7 @@ import Trending from './ChildrenComponents/Trending/Trending';
 export default function Community() {
 
   const userData = useSelector(reducers => reducers.uReducer);
-  console.log(userData.nickname);
+
 
   return (
     <section>

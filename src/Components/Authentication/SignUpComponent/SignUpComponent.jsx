@@ -9,7 +9,6 @@ import { MdDriveFileRenameOutline } from "react-icons/md";
 import { IoWarningSharp } from "react-icons/io5";
 import { domain } from '../../../vars/var';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 
 export default function SignUpComponent({ getLoginPanel }) {

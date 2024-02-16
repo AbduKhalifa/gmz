@@ -27,7 +27,7 @@ export default function Authentication() {
     }
 
     return (
-        <section className={styles.auth + " relative h-screen overflow-hidden"}>
+        <section className={styles.auth + " relative h-screen overflow-hidden bg-helperH"}>
             <div className=" absolute top-0 left-0 w-full h-full z-10">
                 <div className={styles.overlay + " absolute top-0 left-0 w-full h-full -z-10 overflow-hidden"}>  </div>
                 <div className=' py-20 z-10 relative h-full'>

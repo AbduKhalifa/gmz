@@ -24,8 +24,8 @@ export default function LoginComponent({ getRegisterPanel }) {
         email: "",
         password: ""
     })
-
-    const [warning, setWarning] = useState("")
+    const [warning, setWarning] = useState("");
+    const [remember, setRemember] = useState(false);
 
     function gotoHomePage() {
         navigation("/");
@@ -48,73 +48,67 @@ export default function LoginComponent({ getRegisterPanel }) {
         const route = "/auth/login";
         try {
             const { data } = await axios.post(domain + route, loginAccount);
+            console.log(data);
             if (data.status) {
-                putTokenOnStorage(data.token);
+                if (remember) putTokenOnStorage(data.token);
                 dispatch(userLogged(data));
                 gotoHomePage();
             } else {
                 showWarn(data.msg);
             }
         } catch (error) {
-            showWarn(error.response.data.msg)
+            console.log(error);
         }
     }
 
 
     return (
-        <div className={styles.loginPanel + '  mx-auto w-[90%] sm:w-[70%] md:w-[50%] border-helper border-4 '}>
-            <div className=" bg-helperH">
-                <h2 className='text-center p-2 font-semibold'> Login</h2>
-            </div>
-            <div className=' bg-helperH p-4'>
-                <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
-                    <FaUser color='#000' size={24} />
-                    <input
-                        type="email"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='Email'
-                        value={loginAccount.email}
-                        onChange={({ target }) => {
-                            setLoginAccount({ ...loginAccount, email: target.value })
-                        }}
-                    />
-                </div>
-                <div className=' flex items-center bg-white p-2 gap-2 '>
-                    <RiLockPasswordFill color='#000' size={24} />
-                    <input
-                        type="password"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='password'
-                        value={loginAccount.password}
-                        onChange={({ target }) => {
-                            setLoginAccount({ ...loginAccount, password: target.value })
-                        }}
-                    />
-                </div>
-            </div>
-            <div className='bg-helperH '>
-                <div
-                    className={styles.warnElement + ' px-4 py-1 flex justify-center gap-2 items-center h-[14px]'}
-                    ref={warnElement}
-                    style={{ opacity: "0" }}
-                >
-                    <IoWarningSharp color={warninigColor} />
-                    <span className={`text-sm`} style={{ color: warninigColor }}>
-                        {warning}
-                    </span>
-                </div>
-            </div>
-            <div className='pt-4 bg-helperH flex items-center justify-center'>
-                <p className='hover:underline hover:text-base cursor-pointer'>Forget your password</p>
-            </div>
-            <div className='pt-4 bg-helperH flex items-center justify-center'>
-                <button
-                    className={'bg-base px-8 py-2 rounded-full ' + styles.loginBtn}
-                    onClick={login}
-                >LOGIN</button>
-            </div>
-            <div className='bg-helperH pb-4 flex items-center justify-center'>
-                <button className='text-xs hover:underline' onClick={getRegisterPanel}>Sign Up</button>
+        <div className={styles.loginPanel + ' m-auto p-8 rounded-xl border-[1px] border-[#19232a] w-[90%] md:w-[60%] lg:w-[40%] max-w-[580px]'}>
+            <h3 className='f-1 text-[26px] font-semibold mb-5'>LOGIN</h3>
+            <div className='px-6 '>
+                <form className='w-full flex flex-col gap-5'>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Email address <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            onChange={({ target }) => setLoginAccount({ ...loginAccount, email: target.value })}
+                            type="email"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Password <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            onChange={({ target }) => setLoginAccount({ ...loginAccount, password: target.value })}
+                            type="password"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className='flex gap-3 items-center'>
+                        <input
+                            onChange={(event) => setRemember(event.target.checked)}
+                            checked={remember}
+                            type="checkbox"
+                            className={styles.checkbox + " border-[1px] border-[#19232a]"}
+                        />
+                        <span>Remember</span>
+                    </div>
+                    <div className='flex justify-between'>
+                        <button
+                            onClick={login}
+                            className='px-6 py-3 bg-base rounded-[4px] f-1 text-helper font-black'
+                        >
+                            LOG IN
+                        </button>
+
+                        <div className='flex flex-col items-end'>
+                            <button className=' hover:underline text-base text-[14px]'>Lost your password</button>
+                            <button
+                                className=' hover:underline text-base text-[14px]'
+                                onClick={getRegisterPanel}
+                            >Sign In</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     )
