@@ -8,6 +8,7 @@ import { IoDiamondOutline } from "react-icons/io5";
 import { GiCrownedSkull } from "react-icons/gi";
 import { LiaGamepadSolid } from "react-icons/lia";
 import CallPlayer from './CallPlayer/CallPlayer';
+import { domain } from '../../vars/var';
 
 
 export default function Profile() {
@@ -25,14 +26,14 @@ export default function Profile() {
                         <div className=' overflow-hidden rounded-full z-10 relative  border-[4px] border-base'>
 
                             <img
-                                src={require("./../../assets/m4.png")}
+                                src={domain+userData.image}
                                 alt=" avatar "
                                 className=' aspect-square '
                             />
                         </div>
                         <div className='pt-4 flex flex-col items-center'>
                             <h3 className=' font-black text-[24px]'> {userData.nickname} </h3>
-                            <p className=' text-base text-[18px] font-black'> MASETER </p>
+                            <p className=' text-base text-[18px] font-black'> {userData.role.toUpperCase()} </p>
                         </div>
                     </div>
                 </div>
