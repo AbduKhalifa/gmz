@@ -34,9 +34,7 @@ export default function LoginComponent({ getRegisterPanel }) {
     function putTokenOnStorage(myToken) {
         window.localStorage.setItem("tkn", myToken);
     }
-    function deleteTokenFromLocalStorage() {
-        window.localStorage.removeItem("tkn");
-    }
+
 
     function showWarn(warnMessage) {
         warnElement.current.style.opacity = "1";
@@ -63,9 +61,9 @@ export default function LoginComponent({ getRegisterPanel }) {
 
 
     return (
-        <div className={styles.loginPanel + ' m-auto p-8 rounded-xl border-[1px] border-[#19232a] w-[90%] md:w-[60%] lg:w-[40%] max-w-[580px]'}>
+        <div className={styles.loginPanel + ' m-auto px-4 sm:p-8 py-8 rounded-xl border-[1px] border-[#19232a] w-[90%] md:w-[60%] lg:w-[40%] max-w-[580px]'}>
             <h3 className='f-1 text-[26px] font-semibold mb-5'>LOGIN</h3>
-            <div className='px-6 '>
+            <div className='px-2 sm:px-6  '>
                 <form className='w-full flex flex-col gap-5'>
                     <div className=''>
                         <label className='f-1 font-semibold'>Email address <span className='text-[red] f-1 font-black'>*</span></label>

@@ -78,80 +78,70 @@ export default function SignUpComponent({ getLoginPanel }) {
     }
 
     return (
-        <div className={styles.registerPanel + ' mx-auto w-[90%] sm:w-[70%] md:w-[50%] border-helper border-4  '}>
-            <div className=" bg-helperH">
-                <h2 className='text-center p-2 font-semibold'> Sign Up </h2>
-            </div>
-            <div className=' bg-helperH p-4'>
-                <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
-                    <FaUser color='#000' size={24} />
-                    <input
-                        type="email"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='Email'
-                        onChange={({ target }) => {
-                            setAccount({ ...account, email: target.value });
-                        }}
-                        value={account.email}
-                    />
-                </div>
-                <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
-                    <MdDriveFileRenameOutline color='#000' size={24} />
-                    <input
-                        type="text"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='Nickname'
-                        onChange={({ target }) => {
-                            setAccount({ ...account, nickname: target.value });
-                        }}
-                        value={account.nickname}
-                    />
-                </div>
-                <div className=' flex items-center bg-white p-2 gap-2 mb-4'>
-                    <RiLockPasswordFill color='#000' size={24} />
-                    <input
-                        type="password"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='password'
-                        onChange={({ target }) => {
-                            setAccount({ ...account, password: target.value });
-                        }}
-                        value={account.password}
-                    />
-                </div>
-                <div className=' flex items-center bg-white p-2 gap-2'>
-                    <RiLockPasswordFill color='#000' size={24} />
-                    <input
-                        type="password"
-                        className='flex-1 text-black border-0  outline-none '
-                        placeholder='re-password'
-                        onChange={({ target }) => {
-                            setAccount({ ...account, re_password: target.value });
-                        }}
-                        value={account.re_password}
-                    />
-                </div>
-            </div>
-            <div className='bg-helperH '>
-                <div
-                    className={styles.warnElement + ' px-4 py-1 flex justify-center gap-2 items-center h-[14px]'}
-                    ref={warnElement}
-                    style={{ opacity: "0" }}
-                >
-                    <IoWarningSharp color={warninigColor} />
-                    <span className={`text-sm`} style={{ color: warninigColor }}>
-                        {warning}
-                    </span>
-                </div>
-            </div>
-            <div className='pt-4 bg-helperH flex items-center justify-center'>
-                <button
-                    className={'bg-helper px-8 py-2 rounded-full ' + styles.loginBtn}
-                    onClick={signUp}
-                >SIGN UP</button>
-            </div>
-            <div className='bg-helperH pb-4 flex items-center justify-center'>
-                <button className='text-xs hover:underline' onClick={getLoginPanel}>Log in</button>
+        <div className={styles.registerPanel + ' m-auto px-4 sm:p-8 py-8 rounded-xl border-[1px] border-[#19232a] w-[90%] md:w-[60%] lg:w-[40%] max-w-[580px]'}>
+            <h3 className='f-1 text-[26px] font-semibold mb-5'>SIGNUP</h3>
+            <div className='px-2 sm:px-6 '>
+                <form className='w-full flex flex-col gap-5'>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Email address <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            value={account.email}
+                            onChange={({ target }) => {
+                                setAccount({ ...account, email: target.value })
+                            }}
+                            type="email"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Username <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            value={account.nickname}
+                            onChange={({ target }) => {
+                                setAccount({ ...account, nickname: target.value })
+                            }}
+                            type="text"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Password <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            value={account.password}
+                            onChange={({ target }) => {
+                                setAccount({ ...account, password: target.value })
+                            }}
+                            type="password"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className=''>
+                        <label className='f-1 font-semibold'>Re-password <span className='text-[red] f-1 font-black'>*</span></label>
+                        <input
+                            value={account.re_password}
+                            onChange={({ target }) => {
+                                setAccount({ ...account, re_password: target.value })
+                            }}
+                            type="password"
+                            className='bg-helperH p-3 w-full outline-none rounded-md border-[1px] border-[#19232a] font-semibold text-[14px]'
+                        />
+                    </div>
+                    <div className='flex justify-between'>
+                        <button
+                            onClick={signUp}
+                            className='px-6 py-3 bg-base rounded-[4px] f-1 text-helper font-black'
+                        >
+                            SIGN UP
+                        </button>
+
+                        <div className='flex flex-col items-end'>
+                            <button
+                                className=' hover:underline text-base text-[14px]'
+                                onClick={getLoginPanel}
+                            >Log In</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     )
