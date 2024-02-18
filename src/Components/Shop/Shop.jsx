@@ -9,14 +9,16 @@ import styles from "./shop.module.css";
 import ProductCard from './ProductCard';
 import axios from 'axios';
 import { domain } from '../../vars/var';
+import DiscountArea from './DiscountArea';
 export default function Shop() {
 
 
     const [maxPrice, setMaxPrice] = useState(200);
     const [currentCategory, setCurrentCategory] = useState(null);
     const [products, setProducts] = useState(null);
+    const [discountProducts, setDiscountProducts] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const [numberOfPages, setNumberOfPages] = useState([])
+    const [numberOfPages, setNumberOfPages] = useState([]);
 
     function handleMaxPrice(mxp) {
         if (mxp < 200)
@@ -38,7 +40,15 @@ export default function Shop() {
             const { data } = await axios.get(domain + route);
             setProducts(data.data.rows);
             getPageCount(data.data.count)
-            console.log(data.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    async function getDiscountProducts() {
+        const route = "/shop/products/discount";
+        try {
+            const { data } = await axios.get(domain + route);
+            setDiscountProducts(data.products)
         } catch (error) {
             console.log(error);
         }
@@ -62,10 +72,15 @@ export default function Shop() {
         }, 600)
     }, [maxPrice, currentPage])
 
+    useEffect(() => {
+        getDiscountProducts();
+    }, [])
+
     return (
         <section>
             <ShopIntro />
             <section className='py-24 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-40'>
+                <DiscountArea products={discountProducts} />
                 <div className='grid grid-cols-4'>
                     <aside className='col-span-4 md:col-span-2 lg:col-span-1'>
                         <ShopOption className="mb-12">
@@ -138,6 +153,7 @@ export default function Shop() {
                                         price={product.price}
                                         cat={product.category.name}
                                         pathImage={product.image}
+                                        discount={product.discount}
                                     />
                                 })
                                     :

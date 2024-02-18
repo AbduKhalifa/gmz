@@ -1,6 +1,6 @@
 
 
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from "./nav.module.css";
 import { TbSwords } from "react-icons/tb";
 import { MdHomeFilled } from "react-icons/md";
@@ -12,14 +12,16 @@ import { FaThList } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { domain } from '../../vars/var';
 
 
 
 
 export default function Navbar() {
 
-    const userData = useSelector(reducers => reducers.uReducer);
-
+    const userData =  useSelector(reducers => reducers.uReducer);
+    console.log(userData);
+    console.log("^^^");
     const [currentPage, setCurrentPage] = useState("d");
     const [showTabletNav, setShowTabletNav] = useState(false);
 
@@ -146,12 +148,12 @@ export default function Navbar() {
                         </Link>
                         {
                             userData.isLogin ?
-                                <Link  to={`/profile/${userData.id}`}>
+                                <Link to={`/profile/${userData.id}`}>
                                     <li className='flex items-center gap-2 hover:opacity-[1]'>
                                         <div className='rounded-full overflow-hidden border-[3px] border-white'>
                                             <img
                                                 className=' aspect-square object-center object-cover'
-                                                src={require("./../../assets/ac3.jpg")}
+                                                src={domain+userData.image}
                                                 alt={"avatar's " + userData.nickname}
                                                 width={34} />
                                         </div>
@@ -241,7 +243,7 @@ export default function Navbar() {
                                             <div className='rounded-full overflow-hidden border-[3px] border-white'>
                                                 <img
                                                     className=' aspect-square object-center object-cover'
-                                                    src={require("./../../assets/ac3.jpg")}
+                                                    src={domain+userData.image}
                                                     alt={"avatar's " + userData.nickname}
                                                     width={28} />
                                             </div>
