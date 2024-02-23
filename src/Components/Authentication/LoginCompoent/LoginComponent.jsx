@@ -19,7 +19,6 @@ export default function LoginComponent({ getRegisterPanel }) {
     const navigation = useNavigate();
     const warnElement = useRef(null);
 
-    const [warninigColor, setWarningColor] = useState("#fff000")
     const [loginAccount, setLoginAccount] = useState({
         email: "",
         password: ""
@@ -37,9 +36,12 @@ export default function LoginComponent({ getRegisterPanel }) {
 
 
     function showWarn(warnMessage) {
-        warnElement.current.style.opacity = "1";
-        setTimeout(() => warnElement.current.style.opacity = "0", 4000)
         setWarning(warnMessage)
+        warnElement.current.style.opacity = "1";
+        setTimeout(() => {
+            warnElement.current.style.opacity = "0"
+            setTimeout(() => setWarning(""), 500)
+        }, 4000)
     }
 
     async function login() {
@@ -105,6 +107,12 @@ export default function LoginComponent({ getRegisterPanel }) {
                                 onClick={getRegisterPanel}
                             >Sign In</button>
                         </div>
+                    </div>
+                    <div>
+                        <p
+                            className={styles.warnElement + ' text-center text-white text-[14px] opacity-0'}
+                            ref={warnElement}
+                        >{warning} <span className='text-[red]'>*</span></p>
                     </div>
                 </form>
             </div>

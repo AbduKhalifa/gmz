@@ -17,7 +17,7 @@ export default function ProductCard({ title, price, cat, pathImage, discount }) 
                     <p className='font-semibold text-[16px] text-text text-start'>{cat}</p>
                 </div>
                 <div>
-                    <p className=' text-[21px] f-1' style={{ color: "var(--base)" }}>${price - discount}</p>
+                    <p className=' text-[21px] f-1' style={{ color: "var(--base)" }}>${(price - discount).toFixed(2)}</p>
                 </div>
             </div>
         </div>

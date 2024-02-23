@@ -9,9 +9,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import ProductCard from './ProductCard';
 
-export default function DiscountArea({ products }) {
+function DiscountArea({ products }) {
 
-    console.log(products);
+    console.log("asfd");
     return (<>
         {products && products.length > 0 ?
             <div className=' mb-12'>
@@ -35,8 +35,8 @@ export default function DiscountArea({ products }) {
                     }}
                 >
                     {
-                        products.map(product => {
-                            return <SwiperSlide className='flex items-center justify-center text-[18px] text-center '>
+                        products.map((product) => {
+                            return <SwiperSlide key={product.id} className='flex items-center justify-center text-[18px] text-center '>
                                 <ProductCard
                                     key={product.id}
                                     title={product.title}
@@ -57,3 +57,6 @@ export default function DiscountArea({ products }) {
 
     )
 }
+
+
+export default React.memo(DiscountArea)

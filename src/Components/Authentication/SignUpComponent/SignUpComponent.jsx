@@ -15,7 +15,6 @@ export default function SignUpComponent({ getLoginPanel }) {
 
     const warnElement = useRef(null);
 
-    const [warninigColor, setWarningColor] = useState("#fff000")
     const [warning, setWarning] = useState("");
     const [account, setAccount] = useState({
         email: "",
@@ -30,25 +29,22 @@ export default function SignUpComponent({ getLoginPanel }) {
         try {
             const { data } = await axios.post(domain + route, newAccount)
             if (data.status) {
-                setWarningColor("#009E0B");
-                showWarn(data.msg);
-                setWarningColor("#fff000");
+                clearInputs()
+                return getLoginPanel();
             }
-            else {
-                setWarningColor("#fff000");
-                showWarn(data.msg);
-            }
-            clearInputs()
-            getLoginPanel();
+            return showWarn(data.msg)
         } catch (error) {
             console.log(error);
         }
     }
 
     function showWarn(warnMessage) {
-        warnElement.current.style.opacity = "1";
-        setTimeout(() => warnElement.current.style.opacity = "0", 4000)
         setWarning(warnMessage)
+        warnElement.current.style.opacity = "1";
+        setTimeout(() => {
+            warnElement.current.style.opacity = "0"
+            setTimeout(() => setWarning(""), 500)
+        }, 4000)
     }
 
     function clearInputs() {
@@ -65,13 +61,13 @@ export default function SignUpComponent({ getLoginPanel }) {
         const emailRegex = /^[a-zA-Z0-9._-]+@gmail.com$/;
         const nicknameRegex = /^[A-z]{3,12}( [A-z]{3,12})?$/
         if (!emailRegex.test(account.email)) {
-            showWarn("Email not valid")
+            showWarn("Email not valid");
         } else if (!nicknameRegex.test(account.nickname)) {
-            showWarn("nickname not valid")
+            showWarn("nickname not valid");
         } else if (!passwordRegex.test(account.password)) {
-            showWarn("minimum eight characters, at least one letter and one number")
+            showWarn("minimum eight characters, at least one letter and one number");
         } else if (account.re_password != account.password) {
-            showWarn("password not matched")
+            showWarn("password not matched");
         }
         else
             createAccount(account);
@@ -140,6 +136,13 @@ export default function SignUpComponent({ getLoginPanel }) {
                                 onClick={getLoginPanel}
                             >Log In</button>
                         </div>
+
+                    </div>
+                    <div>
+                        <p
+                            className={styles.warnElement + ' text-center text-white text-[14px] opacity-0'}
+                            ref={warnElement}
+                        >{warning} <span className='text-[red]'>*</span></p>
                     </div>
                 </form>
             </div>
