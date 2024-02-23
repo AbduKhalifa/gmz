@@ -30,7 +30,6 @@ export default function SignUpComponent({ getLoginPanel }) {
             const { data } = await axios.post(domain + route, newAccount)
             if (data.status) {
                 clearInputs()
-                return getLoginPanel();
             }
             return showWarn(data.msg)
         } catch (error) {
