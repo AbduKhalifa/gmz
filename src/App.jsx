@@ -46,6 +46,26 @@ function App() {
           element: <ClanPage />
         },
         {
+          path: "/best-clans/",
+          element: <h1> Best clan Page</h1>
+        },
+        {
+          path: "/local-clans/",
+          element: <h1> local clan Page</h1>
+        },
+        {
+          path: "/new-clans/",
+          element: <h1> new clan Page</h1>
+        },
+        {
+          path: "/prominent-clans/",
+          element: <h1> prominent clan Page</h1>
+        },
+        {
+          path: "/clan/:id",
+          element: <h1> CLAN ID</h1>
+        },
+        {
           path: "/account",
           element: <ProtectedAuthenticated where={"/"} check={isLogin}>  <Authentication /> </ProtectedAuthenticated>
         },
@@ -57,6 +77,7 @@ function App() {
           path: "/profile/:id",
           element: <ProtectedAuthenticated where={"/account"} check={!isLogin}> <Profile /> </ProtectedAuthenticated>
         },
+
       ]
     },
     {
