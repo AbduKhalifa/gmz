@@ -35,3 +35,59 @@
     opacity: 1;
     top: 90%;
 }
+
+
+.search_input {
+    position: relative;
+}
+
+.search_input::before,
+.search_input::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: var(--base);
+    transition: 250ms;
+}
+
+.search_input::before {
+    left: 0;
+    transform: translateX(-200%);
+}
+
+.search_input::after {
+    right: 0;
+    transform: translateX(200%);
+}
+
+.search_input button {
+    opacity: 0;
+    transition: 500ms;
+}
+
+.search_input.focus button {
+    opacity: 1;
+}
+
+.search_input.focus::before,
+.search_input.focus::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: var(--helper);
+
+}
+
+.search_input.focus::before {
+    left: 0;
+    transform: translateX(-80%);
+}
+
+.search_input.focus::after {
+    right: 0;
+    transform: translateX(80%);
+}

@@ -10,6 +10,7 @@ module.exports = {
         'helper': '#0B0E13',
         'helperH': '#121B24',
         'text': '#ABAEBA',
+        'yellow': '#FFBE18',
       },
     },
   },

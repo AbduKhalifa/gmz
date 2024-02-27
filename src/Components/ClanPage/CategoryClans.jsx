@@ -8,10 +8,10 @@ import { IoMdArrowDropright } from "react-icons/io";
 import TypeCard from './TypeCard';
 
 
-export default function TopClans() {
+export default function CategoryClans() {
     return (
         <div
-            className=' relative z-10 py-12 px-4 sm:px-6 md:px-8 lg:px-12'
+            className=' relative z-10 py-20 px-4 sm:px-6 md:px-8 lg:px-12'
             style={{
                 backgroundImage: `url('${backgroundImage}')`,
                 backgroundSize: "cover",
@@ -21,7 +21,7 @@ export default function TopClans() {
                 <h2 className='f-1 text-[28px] text-center'> Join to our community </h2>
                 <p className='text-center text-base font-black f-1 text-[20px]'><span className='text-[red]'>#</span> Participate, then conquer other clans and get the prize or spoils </p>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-12'>
+            <div className='grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8 mt-12'>
                 <TypeCard title={"Top Clans"} image={"top-clans.png"} path={"/best-clans"}>
                     <div className='pt-4'>
                         <h6 className='text-[12px] font-extrabold'><span className='text-base f-1 font-black'>#1</span> NINJAS</h6>
