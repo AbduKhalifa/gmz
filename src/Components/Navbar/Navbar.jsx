@@ -19,9 +19,8 @@ import { domain } from '../../vars/var';
 
 export default function Navbar() {
 
-    const userData =  useSelector(reducers => reducers.uReducer);
-    console.log(userData);
-    console.log("^^^");
+    const userData = useSelector(reducers => reducers.uReducer);
+    console.log("__Navbar__");
     const [currentPage, setCurrentPage] = useState("d");
     const [showTabletNav, setShowTabletNav] = useState(false);
 
@@ -153,7 +152,7 @@ export default function Navbar() {
                                         <div className='rounded-full overflow-hidden border-[3px] border-white'>
                                             <img
                                                 className=' aspect-square object-center object-cover'
-                                                src={domain+userData.image}
+                                                src={domain + userData.image}
                                                 alt={"avatar's " + userData.nickname}
                                                 width={34} />
                                         </div>
@@ -243,7 +242,7 @@ export default function Navbar() {
                                             <div className='rounded-full overflow-hidden border-[3px] border-white'>
                                                 <img
                                                     className=' aspect-square object-center object-cover'
-                                                    src={domain+userData.image}
+                                                    src={domain + userData.image}
                                                     alt={"avatar's " + userData.nickname}
                                                     width={28} />
                                             </div>

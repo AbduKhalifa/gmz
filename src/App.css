@@ -10,7 +10,9 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
-
+body{
+  overflow-x: hidden;
+}
 .mc {
   color: var(--base);
 }

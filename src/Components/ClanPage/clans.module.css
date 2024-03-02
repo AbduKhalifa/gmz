@@ -37,6 +37,34 @@
 }
 
 
+.clan_card {
+    max-width: 350px;
+}
+
+.clan_card .clan_logo>div,
+.clan_card .clan_logo img,
+.clan_card>div:nth-child(2),
+.clan_card>div>div>img {
+    transition: 250ms;
+}
+
+.clan_card:hover>div:nth-child(2) {
+    border: solid var(--base) 1px;
+}
+
+.clan_card:hover .clan_logo>div {
+    background-color: var(--base);
+}
+
+.clan_card:hover .clan_logo img {
+    transform: rotate3d(0, 1, 0, 360deg);
+}
+
+.clan_card:hover>div>div>img {
+    scale: 1.2;
+    rotate: 10deg;
+}
+
 .search_input {
     position: relative;
 }
@@ -50,6 +78,14 @@
     width: 10px;
     background-color: var(--base);
     transition: 250ms;
+}
+
+@media (max-width:768px) {
+
+    .search_input::before,
+    .search_input::after {
+        display: none;
+    }
 }
 
 .search_input::before {
@@ -79,7 +115,14 @@
     height: 100%;
     width: 10px;
     background-color: var(--helper);
+}
 
+@media (max-width:768px) {
+
+    .search_input.focus::before,
+    .search_input.focus::after {
+        display: none;
+    }
 }
 
 .search_input.focus::before {
