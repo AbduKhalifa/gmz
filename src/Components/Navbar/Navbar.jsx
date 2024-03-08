@@ -91,7 +91,7 @@ export default function Navbar() {
 
             <div className='flex items-center justify-between'>
                 <div>
-                    <img src={require("./../../assets/logo.png")} alt="Logo" width={100} />
+                    <img src={require("./../../assets/logo-white.png")} alt="Logo" width={100} />
                 </div>
                 <div className={styles.PC}>
                     <ul className='flex items-center gap-4'>

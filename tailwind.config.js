@@ -11,6 +11,7 @@ module.exports = {
         'helperH': '#121B24',
         'text': '#ABAEBA',
         'yellow': '#FFBE18',
+        'over': '#19232a',
       },
     },
   },

@@ -28,7 +28,7 @@ export default function Profile() {
                             <img
                                 src={domain+userData.image}
                                 alt=" avatar "
-                                className=' aspect-square '
+                                className=' aspect-square object-cover object-center w-full'
                             />
                         </div>
                         <div className='pt-4 flex flex-col items-center'>
