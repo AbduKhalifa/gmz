@@ -6,6 +6,7 @@ import styles from "./clans.module.css";
 import { domain } from '../../vars/var';
 
 export default function ClanCard({ clanData }) {
+    console.log(clanData);
     return (
         <div className={styles.clan_card + ' relative z-10 cursor-pointer m-auto sm:m-0'}>
             <div className='relative top-0 left-0 w-[80%] m-auto '>

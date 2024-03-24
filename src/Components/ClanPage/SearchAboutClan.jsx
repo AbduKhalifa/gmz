@@ -1,17 +1,33 @@
 
 
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import masked_bg from "./../../assets/masked-bg.png";
 import styles from "./clans.module.css";
 import ClanCard from './ClanCard';
+import axios from 'axios';
+import { domain } from '../../vars/var';
 
 export default function SearchAboutClan({ randomClans }) {
+
+    const [searchHash, setSearchHash] = useState("");
+    const [resultOfSearch, setResultOfSearch] = useState(null);
 
     const search_input = useRef(null);
 
     function handleSearchInputActivity() {
         search_input.current.classList.toggle(styles.focus);
+    }
+    function Searching({ target }) {
+        setSearchHash(target.value);
+    }
+    async function getResultClan() {
+        const endPoint = "/clan/hash/";
+        if (searchHash.length > 0) {
+            const { data } = await axios.get(domain + endPoint + searchHash);
+            console.log(data);
+            setResultOfSearch(data)
+        }
     }
 
     return (
@@ -24,7 +40,7 @@ export default function SearchAboutClan({ randomClans }) {
             }}
 
         >
-            <div className='flex justify-center'>
+            <div className='flex justify-center relative'>
                 <div
                     ref={search_input}
                     className={'m-auto w-[90%] sm:w-[50%] flex gap-4 bg-helper p-2 sm:p-4 items-center cursor-text ' + styles.search_input}
@@ -34,16 +50,21 @@ export default function SearchAboutClan({ randomClans }) {
                     }}
                 >
                     <span className='text-text'>#</span>
-                    <div className='flex-grow'>
+                    <div className='flex-grow '>
                         <input
+                            value={searchHash}
+                            onChange={Searching}
                             onFocus={handleSearchInputActivity}
-                            onBlur={handleSearchInputActivity}
+                            onBlur={() => {
+                                handleSearchInputActivity();
+                                // setResultOfSearch(null);
+                            }}
                             type="text"
                             placeholder='Clan hash'
                             className=' p-2 outline-none  bg-[#00000000] text-text w-full'
                         />
                     </div>
-                    <button className='bg-base py-2 px-4 font-black rounded-md text-black hover:bg-yellow f-1'> SEARCH </button>
+                    <button onClick={getResultClan} className='bg-base py-2 px-4 font-black rounded-md text-black hover:bg-yellow f-1'> SEARCH </button>
                 </div>
             </div>
             <div className='py-12 px-4 sm:px-6 md:px-16 lg:px-24'>

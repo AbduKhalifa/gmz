@@ -52,12 +52,17 @@ export default function Trending({ trends }) {
                                                     }
 
                                                 >
-                                                    <div className='flex  gap-6  text-text'>
-                                                        <div className='flex gap-2 items-center cursor-pointer'>
+                                                    <div className={
+                                                        indexTrend % 2 == 0 ?
+                                                            'flex  gap-6 flex-row-reverse text-text'
+                                                            :
+                                                            'flex  gap-6 text-text'
+                                                    }>
+                                                        <div className='flex gap-2 items-center cursor-pointer hover:text-base duration-[250ms]'>
                                                             <span className='text-[14px] font-semibold'>{trend.likeCount}</span>
                                                             <BiSolidLike size={20} />
                                                         </div>
-                                                        <div className='flex gap-2 items-center cursor-pointer'>
+                                                        <div className='flex gap-2 items-center cursor-pointer hover:text-base duration-[250ms]'>
                                                             <span className='text-[14px] font-semibold'>{trend.dislikeCount}</span>
                                                             <BiSolidDislike size={20} />
                                                         </div>

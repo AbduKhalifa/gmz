@@ -8,7 +8,7 @@ import styles from "./news.module.css";
 
 export default function Article() {
     return (
-        <article className={'bg-helperH p-2 border-over border-[3px] border-[transparent] cursor-pointer hover:border-over duration-[250ms] ' + styles.article}>
+        <article className={'bg-helperH p-2  border-[3px] border-[transparent] cursor-pointer hover:border-over duration-[250ms] ' + styles.article}>
             <div className='flex items-center gap-4 border-b-[2px] border-over pb-2'>
                 <div>
                     <img
