@@ -4,11 +4,12 @@
 import React from 'react';
 import styles from "./clans.module.css";
 import { domain } from '../../vars/var';
+import { Link } from 'react-router-dom';
 
 export default function ClanCard({ clanData }) {
     console.log(clanData);
     return (
-        <div className={styles.clan_card + ' relative z-10 cursor-pointer m-auto sm:m-0'}>
+        <Link to={`/clan/${clanData.id}`} className={styles.clan_card + ' relative z-10 cursor-pointer m-auto sm:m-0'}>
             <div className='relative top-0 left-0 w-[80%] m-auto '>
                 <div className=' overflow-hidden rounded-[13px]'>
                     <img src={domain + clanData.avatars[0].path} alt="" className=' w-full rounded-[13px]' />
@@ -23,6 +24,6 @@ export default function ClanCard({ clanData }) {
                 <p className='f-1 text-[26px]'> {clanData.name} </p>
                 <span className='text-text'>{clanData.clansRankView.rankTitle}</span>
             </div>
-        </div>
+        </Link>
     )
 }
