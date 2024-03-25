@@ -1,0 +1,45 @@
+.clan_tags>div {
+    position: relative;
+}
+
+.clan_tags>div:not(:last-child)::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: var(--base);
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    transform: translateY(-50%);
+}
+
+.s {
+    position: relative;
+    color: #eee;
+}
+
+.s:hover i {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: #eee;
+    border-radius: 20px;
+}
+
+.active {
+    color: var(--highlight) !important;
+}
+
+.active i {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: var(--highlight) !important;
+    border-radius: 20px;
+}
