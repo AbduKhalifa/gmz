@@ -12,6 +12,8 @@ module.exports = {
         'text': '#ABAEBA',
         'yellow': '#FFBE18',
         'over': '#19232a',
+        'highlight': '#6152C6 ',
+        'gray': '#252836',
       },
     },
   },

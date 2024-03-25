@@ -11,6 +11,7 @@ import Shop from './Components/Shop/Shop';
 import { checkAboutUserToken } from './redux/uSlice';
 import { useEffect } from 'react';
 import ClanPage from './Components/ClanPage/ClanPage';
+import ClanSection from './Components/ClanSection/ClanSection';
 
 function App() {
 
@@ -52,6 +53,10 @@ function App() {
         {
           path: "/local-clans/",
           element: <h1> local clan Page</h1>
+        },
+        {
+          path: "/clan/:id",
+          element: <ClanSection />
         },
         {
           path: "/new-clans/",

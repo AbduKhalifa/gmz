@@ -5,14 +5,19 @@
   --helperH: #121B24;
   --text: #ABAEBA;
   --yellow: #FFBE18;
+  --over: #19232a;
+  --highlight: #6152C6;
+  --gray: #252836;
 }
 
 * {
   font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
   overflow-x: hidden;
 }
+
 .mc {
   color: var(--base);
 }
