@@ -62,7 +62,10 @@ export default function ClanSection() {
                         showing == "home" ?
                             "home "
                             :
-                            <MemberSection members={members} />
+                            <>
+                                <span className='block mt-12  text-text text-[18px] text-center f-1 uppercase'> {members.length} / {clanData.clan.maxMembers} <span className='text-[14px] font-bold f-1'>members</span></span>
+                                <MemberSection members={members} />
+                            </>
 
                 }
             </section>
