@@ -55,7 +55,7 @@ export default function ClanSection() {
                 {clanData ? <ClanDefinition data={clanData} displayHandle={setShowing} currentSection={showing} /> : null}
                 {
                     clanData && clanData.clan.private && !hisClan ? <div className='mt-12 p-12 md:p-24 bg-gray rounded-xl flex flex-col items-center justify-center gap-6 text-text'>
-                        <h4 className='text-[38px] font-black f-1 uppercase' > This clan is private {hisClan + " s"}</h4>
+                        <h4 className='text-[38px] font-black f-1 uppercase' > This clan is private </h4>
                         <FaLock size={112} />
                     </div>
                         :
